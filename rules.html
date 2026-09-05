@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aven Network | Rules</title>
+    <style>
+        /* --- GLOBAL STYLE & AQUA THEME VARIANCE --- */
+        :root { 
+            --aqua: #00e5ff; 
+            --bg-dark: #0a0f14; 
+            --bg-card: #111822; 
+            --text-light: #e0f7fa; 
+            --text-gray: #81a1c1; 
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-light); }
+        
+        /* --- NAVIGATION BAR --- */
+        nav { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 20px 8%; 
+            background-color: rgba(11, 15, 20, 0.85); 
+            border-bottom: 1px solid rgba(0, 229, 255, 0.1); 
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            z-index: 1000;
+        }
+        .logo { font-size: 28px; font-weight: 800; color: #fff; text-transform: uppercase; }
+        .logo span { color: var(--aqua); }
+        .nav-links { list-style: none; display: flex; gap: 30px; }
+        .nav-links a { text-decoration: none; color: var(--text-light); font-weight: 600; text-transform: uppercase; font-size: 14px; transition: 0.3s ease; }
+        .nav-links a:hover, .nav-links a.active { color: var(--aqua); }
+        
+        /* --- CONTENT DESIGN --- */
+        .container { max-width: 900px; margin: 120px auto 60px auto; padding: 0 20px; }
+        .title { font-size: 36px; text-transform: uppercase; margin-bottom: 40px; text-align: center; }
+        .title span { color: var(--aqua); }
+        .rule-block { background-color: var(--bg-card); border: 1px solid rgba(0, 229, 255, 0.1); border-radius: 12px; padding: 35px; margin-bottom: 30px; }
+        .rule-block h3 { color: var(--aqua); text-transform: uppercase; margin-bottom: 15px; font-size: 20px; letter-spacing: 1px; border-bottom: 1px dashed rgba(0, 229, 255, 0.2); padding-bottom: 5px;}
+        .rule-list { list-style: none; text-align: left; }
+        .rule-list li { margin-bottom: 15px; padding-left: 20px; position: relative; line-height: 1.6; color: var(--text-gray); }
+        .rule-list li::before { content: "➔"; position: absolute; left: 0; color: var(--aqua); font-weight: bold; }
+        .rule-list strong { color: #fff; }
+    </style>
+</head>
+<body>
+
+    <!-- NAV BAR (Matches index.html exactly) -->
+    <nav>
+        <div class="logo">AVEN<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="rules.html" class="active">Rules</a></li>
+            <!-- REPLACED WITH PLACEHOLDER: Paste your real web store link inside the href="PLACEHOLDER" quote -->
+            <li><a href="YOUR_STORE_LINK_HERE" target="_blank">Store</a></li>
+            <li><a href="https://discord.gg/U9qH2kzQV" target="_blank">Discord</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2 class="title">Official <span>Server Rules</span></h2>
+        
+        <!-- SECTION 1: IN-GAME RULES -->
+        <div class="rule-block">
+            <h3>🛡️ In-Game Gameplay Rules</h3>
+            <ul class="rule-list">
+                <li><strong>No Hacking or Unfair Modifications:</strong> The use of hacked clients, X-Ray packs, auto-clickers, macros, or inventory modifications that provide an advantage is strictly forbidden.</li>
+                <li><strong>No Exploiting or Bug Abuse:</strong> If you discover a glitch or duplication bug in the server mechanics, you must report it to the staff immediately. Exploiting bugs will result in a permanent data wipe.</li>
+                <li><strong>No Griefing or Stealing:</strong> Players are not allowed to destroy, modify, or steal from another player’s builds unless explicitly permitted by specific world gamemode rules.</li>
+                <li><strong>No Server Lag Machines:</strong> Building redstone clocks or entity loops designed intentionally to drop the server's TPS or crash the proxy network is a bannable offense.</li>
+            </ul>
+        </div>
+
+        <!-- SECTION 2: CHAT RULES -->
+        <div class="rule-block">
+            <h3>💬 Chat & Community Conduct Rules</h3>
+            <ul class="rule-list">
+                <li><strong>Zero Tolerance for Hate Speech:</strong> Discrimination, racial slurs, homophobia, and severe harassment will result in an immediate network-wide mute or ban.</li>
+                <li><strong>No Chat Spamming or Text Walls:</strong> Sending consecutive duplicate messages, spamming symbols, or writing in all capital letters disrupts public chat rooms and is not allowed.</li>
+                <li><strong>No Advertising:</strong> Do not share IP addresses, server invite links, or URLs for other Minecraft networks, YouTube channels, or Discord servers.</li>
+                <li><strong>Keep Chat English-Only:</strong> To allow our global staff team to monitor chat rooms effectively and keep players safe, please stick to English in public channels.</li>
+            </ul>
+        </div>
+
+        <!-- SECTION 3: NETWORK SECURITY RULES -->
+        <div class="rule-block">
+            <h3>⚖️ Account & Network Security Rules</h3>
+            <ul class="rule-list">
+                <li><strong>No Ban Evading:</strong> If you are punished on one account, logging in on an alternative account (ALT) to bypass your mute or ban will result in a permanent IP ban.</li>
+                <li><strong>No In-Game Scamming:</strong> Tricking players out of hard-earned in-game items or currency during survival or economy trading sequences is strictly forbidden.</li>
+                <li><strong>Your Account is Your Responsibility:</strong> Staff will not reverse punishments if your sibling, friend, or a hacker gets your account banned. Secure your Minecraft credentials!</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aven Network | Official Website</title>
+    <style>
+        /* --- GLOBAL STYLE & AQUA THEME VARIANCE --- */
+        :root {
+            --aqua: #00e5ff;
+            --aqua-glow: rgba(0, 229, 255, 0.4);
+            --bg-dark: #0a0f14;
+            --bg-card: #111822;
+            --text-light: #e0f7fa;
+            --text-gray: #81a1c1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+
+        /* --- NAVIGATION BAR --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: rgba(11, 15, 20, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px var(--aqua-glow);
+        }
+
+        .logo span {
+            color: var(--aqua);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--aqua);
+            text-shadow: 0 0 8px var(--aqua);
+        }
+
+        /* --- HERO BANNER WITH FADED MOUNTAIN BACKGROUND --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(10, 15, 20, 0.4) 0%, rgba(10, 15, 20, 0.95) 100%), 
+                        url('https://unsplash.com') no-repeat center center/cover;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 75px;
+            font-weight: 900;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+        }
+
+        .hero h1 span {
+            color: var(--aqua);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 35px;
+            max-width: 600px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* --- DYNAMIC SERVER IP BLOCK --- */
+        .ip-container {
+            background-color: rgba(17, 24, 34, 0.85);
+            border: 2px solid var(--aqua);
+            padding: 15px 40px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 320px;
+            cursor: pointer;
+            box-shadow: 0 0 25px var(--aqua-glow);
+            transition: 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .ip-container:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 35px var(--aqua);
+        }
+
+        .ip-text {
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--aqua);
+            transition: 0.2s ease;
+        }
+
+        /* --- PORTAL / FEATURE CARDS SECTION --- */
+        .main-content {
+            padding: 100px 8%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 60px;
+        }
+
+        .section-title span {
+            color: var(--aqua);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Clean 2-column layout now that staff is gone */
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Responsive adjustment for small screens */
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(0, 229, 255, 0.1);
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--aqua);
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.1);
+        }
+
+        .card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card p {
+            color: var(--text-gray);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            background-color: transparent;
+            border: 2px solid var(--aqua);
+            color: var(--aqua);
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--aqua);
+            color: #000;
+            box-shadow: 0 0 15px var(--aqua-glow);
+        }
+
+        /* --- COMPACT FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(0, 229, 255, 0.05);
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <nav>
+        <div class="logo">AVEN<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#portal">Explore</a></li>
+            <!-- REPLACED WITH PLACEHOLDER: Paste your real web store link inside the href="PLACEHOLDER" quote -->
+            <li><a href="YOUR_STORE_LINK_HERE" target="_blank">Store</a></li>
+            <li><a href="https://discord.gg/U9qH2kzQV" target="_blank">Discord</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO HOME HEADER SECTION -->
+    <header class="hero">
+        <h1>AVEN<span> NETWORK</span></h1>
+        <p>Welcome to the ultimate custom Minecraft multiplayer experience. Join custom survival gamemodes, competing factions, and cross-play arenas.</p>
+        
+        <!-- CLICK TO COPY FUNCTIONAL BUTTON -->
+        <div class="ip-container" onclick="copyServerIP()">
+            <span class="ip-text" id="server-ip">aven.exaroton.me</span>
+        </div>
+    </header>
+
+    <!-- EXPLORATION TILES -->
+    <section class="main-content" id="portal">
+        <h2 class="section-title">Server <span>Navigation Hub</span></h2>
+        <div class="grid">
+            
+            <!-- SERVER STORE CARD -->
+            <div class="card">
+                <h3>Server Store</h3>
+                <p>Support our network servers! Purchase custom cosmetic modifications, exclusive status tags, and ranks directly synced to your user layout profile.</p>
+                <!-- REPLACED WITH PLACEHOLDER: Paste your real web store link inside the href="PLACEHOLDER" quote -->
+                <a href="YOUR_STORE_LINK_HERE" target="_blank" class="btn">Visit Store</a>
+            </div>
+
+            <!-- RULES LIST COMPONENT -->
+            <div class="card">
+                <h3>Network Rules</h3>
+                <p>Read through our player compliance regulations to keep your server safe, fair, and fun for the community. Ignorance of structural rules is not excused.</p>
+                <a href="rules.html" class="btn">Read Guidelines</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER CREDITS -->
+    <footer>
+        <p>&copy; 2026 Aven Network. Not affiliated with Mojang Studios / Microsoft Corporation.</p>
+    </footer>
+
+    <!-- INTERACTIVE LOGIC SCRIPT -->
+    <script>
+        function copyServerIP() {
+            const ipDisplay = document.getElementById('server-ip');
+            const targetIP = "aven.exaroton.me";
+
+            // Execute clean clipboard operation
+            navigator.clipboard.writeText(targetIP).then(() => {
+                // Change text inside button and swap color style briefly
+                ipDisplay.innerText = "IP COPIED";
+                ipDisplay.style.color = "#ffffff";
+                ipDisplay.style.textShadow = "0 0 10px #ffffff";
+
+                // Auto Reset Text Timing to exactly 3 seconds (3000ms)
+                setTimeout(() => {
+                    ipDisplay.innerText = targetIP;
+                    ipDisplay.style.color = "var(--aqua)";
+                    ipDisplay.style.textShadow = "none";
+                }, 3000);
+            }).catch(err => {
+                console.error('Could not copy server text: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
